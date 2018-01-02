@@ -1,0 +1,17 @@
+CREATE TABLE [dbo].[Clientes] (
+    [Id]             INT          IDENTITY (1, 1) NOT NULL,
+    [Nome]           VARCHAR (40) NOT NULL,
+    [Sobrenome]      VARCHAR (40) NOT NULL,
+    [Email]          VARCHAR (50) NOT NULL,
+    [Senha]          VARCHAR (16) NOT NULL,
+    [CPF]            VARCHAR (11) NOT NULL,
+    [DataNascimento] VARCHAR (10) NOT NULL,
+    [Telefone]       VARCHAR (20) NULL,
+    [Endereco]       VARCHAR (50) NOT NULL,
+    [Numero]         VARCHAR (6) NOT NULL,
+    [Complemento]    VARCHAR (40) NULL,
+    [Bairro]         VARCHAR (40) NOT NULL,
+    [CEP]            VARCHAR (12) NOT NULL,
+    [Estado]         VARCHAR (2) NOT NULL,
+    [Cidade]         VARCHAR (20) NOT NULL
+);

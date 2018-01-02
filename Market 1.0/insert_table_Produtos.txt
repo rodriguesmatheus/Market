@@ -1,0 +1,11 @@
+INSERT INTO Produtos(NomePro,PrecoFornPro,PrecoRevPro,QuantidadePro,FornecedorPro,CategoriaPro)
+CREATE TABLE [dbo].[Produtos] (
+    [IdProdutos]    INT IDENTITY (1, 1) NOT NULL,
+    [NomePro]       VARCHAR (50) NOT NULL,
+    [CategoriaPro]  VARCHAR (30) NOT NULL,
+    [FornecedorPro] VARCHAR (30) NOT NULL,
+    [PrecoFornPro]  [decimal] (18,2) NOT NULL,
+    [PrecoRevPro]   [decimal] (18,2) NOT NULL,
+    [QuantidadePro] int NOT NULL,
+    PRIMARY KEY CLUSTERED ([IdProdutos] ASC)
+);
