@@ -8,12 +8,7 @@ namespace tela_principal
 {
     class Validacao   
     {
-<<<<<<< HEAD
-        // é o ultimo teste que vou fazer
-        //teste
-        //testnovo
-=======
->>>>>>> 942a3a98aa2e5200f9fbcfdd663e740686b54602
+
         cadastrocliente formCadastroCliente = new cadastrocliente();
         formAlterarCliente formAlterarCliente = new formAlterarCliente();
 
