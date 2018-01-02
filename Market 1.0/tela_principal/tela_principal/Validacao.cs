@@ -8,6 +8,7 @@ namespace tela_principal
 {
     class Validacao
    
+        //teste do guizinho monstrao melhoor do mundo
     {
         cadastrocliente formCadastroCliente = new cadastrocliente();
         formAlterarCliente formAlterarCliente = new formAlterarCliente();
