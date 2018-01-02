@@ -9,6 +9,8 @@ namespace tela_principal
     class Validacao
    
     {
+        //teste
+        //testnovo
         cadastrocliente formCadastroCliente = new cadastrocliente();
         formAlterarCliente formAlterarCliente = new formAlterarCliente();
 
