@@ -10,6 +10,7 @@ namespace tela_principal
    
         //teste do guizinho monstrao melhoor do mundo
     {
+        //teste
         cadastrocliente formCadastroCliente = new cadastrocliente();
         formAlterarCliente formAlterarCliente = new formAlterarCliente();
 
