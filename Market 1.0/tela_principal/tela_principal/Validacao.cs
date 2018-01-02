@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace tela_principal
 {
-    class Validacao
-   
+    class Validacao   
     {
-        //teste
-        //testnovo
         cadastrocliente formCadastroCliente = new cadastrocliente();
         formAlterarCliente formAlterarCliente = new formAlterarCliente();
 
