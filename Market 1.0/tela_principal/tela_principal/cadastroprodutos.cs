@@ -104,6 +104,35 @@ namespace tela_principal
             pro.Show();
             this.Hide();
         }
+
+        private void txtPreRevPro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPreForPro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPreForPro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtQuantPro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
 

@@ -103,6 +103,7 @@
             this.txtQuantPro.Size = new System.Drawing.Size(45, 20);
             this.txtQuantPro.TabIndex = 3;
             this.txtQuantPro.TextChanged += new System.EventHandler(this.txtQuantPro_TextChanged);
+            this.txtQuantPro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantPro_KeyPress);
             // 
             // comCategoriaPro
             // 
@@ -137,7 +138,7 @@
             // 
             this.btnLimparPro.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnLimparPro.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnLimparPro.Location = new System.Drawing.Point(307, 263);
+            this.btnLimparPro.Location = new System.Drawing.Point(325, 263);
             this.btnLimparPro.Name = "btnLimparPro";
             this.btnLimparPro.Size = new System.Drawing.Size(95, 36);
             this.btnLimparPro.TabIndex = 8;
@@ -149,9 +150,9 @@
             // 
             this.btnVoltarPro.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnVoltarPro.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnVoltarPro.Location = new System.Drawing.Point(397, 12);
+            this.btnVoltarPro.Location = new System.Drawing.Point(428, 303);
             this.btnVoltarPro.Name = "btnVoltarPro";
-            this.btnVoltarPro.Size = new System.Drawing.Size(85, 28);
+            this.btnVoltarPro.Size = new System.Drawing.Size(61, 23);
             this.btnVoltarPro.TabIndex = 9;
             this.btnVoltarPro.Text = "Voltar";
             this.btnVoltarPro.UseVisualStyleBackColor = false;
@@ -180,6 +181,8 @@
             this.txtPreForPro.Size = new System.Drawing.Size(80, 20);
             this.txtPreForPro.TabIndex = 6;
             this.txtPreForPro.Text = "00.00";
+            this.txtPreForPro.TextChanged += new System.EventHandler(this.txtPreForPro_TextChanged);
+            this.txtPreForPro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPreForPro_KeyPress);
             // 
             // txtPreRevPro
             // 
@@ -189,6 +192,7 @@
             this.txtPreRevPro.TabIndex = 5;
             this.txtPreRevPro.Text = "00.00";
             this.txtPreRevPro.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtPreRevPro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPreRevPro_KeyPress);
             // 
             // label6
             // 
