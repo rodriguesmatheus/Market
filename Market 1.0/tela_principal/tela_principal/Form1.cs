@@ -58,5 +58,12 @@ namespace tela_principal
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            cadastrofornecedor cf = new cadastrofornecedor();
+            cf.Show();
+            this.Hide();
+        }
     }
 }
