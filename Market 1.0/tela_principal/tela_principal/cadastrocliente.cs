@@ -29,41 +29,44 @@ namespace tela_principal
 
             private void btnSalvar_Click(object sender, EventArgs e)
             {
-
                 Validacao val = new Validacao();
                 Login log = new Login();
                 Clientes1 cliente = new Clientes1();
                 DAO dao = new DAO();
                 try
                 {
-                    if (val.ValidarSenha(txtSenha.Text, txtConfirmarSenha.Text))
-                    {
-                        cliente.Nome = txtNome.Text;
-                        cliente.Sobrenome = txtSobrenome.Text;
-                        cliente.Email = txtEmail.Text;
-                        cliente.Senha = txtSenha.Text;
-                        cliente.CPF = txtCPF.Text;
-                        cliente.DataNascimento = txtDataNascimento.Text;
-                        cliente.Telefone = txtTelefone.Text;
-                        cliente.Endereco = txtEndereco.Text;
-                        cliente.Numero = Convert.ToInt32(txtNumero.Text);
-                        cliente.Complemento = txtComplemento.Text;
-                        cliente.Bairro = txtBairro.Text;
-                        cliente.CEP = txtCEP.Text;
-                        cliente.Estado = txtEstado.Text;
-                        cliente.Cidade = txtCidade.Text;
 
-                        dao.INSERT(cliente);
-                        MessageBox.Show("Cliente cadastrado com sucesso !");
-                        log.Show();
-                        this.Hide();
+                string validacao = (val.ValidarCamposPessoais(txtNome.Text, txtSobrenome.Text, txtEmail.Text, txtCPF.Text, txtDataNascimento.Text, txtSenha.Text, txtConfirmarSenha.Text));
+
+
+                    if (validacao == "")
+                    {
+                        if((val.ValidarCamposEndereco(txtEndereco.Text, txtNumero.Text, txtBairro.Text, txtCEP.Text, txtEstado.Text, txtCidade.Text)) == "")
+                        {
+                            cliente.Nome = txtNome.Text;
+                            cliente.Sobrenome = txtSobrenome.Text;
+                            cliente.Email = txtEmail.Text;
+                            cliente.Senha = txtSenha.Text;
+                            cliente.CPF = txtCPF.Text;
+                            cliente.DataNascimento = txtDataNascimento.Text;
+                            cliente.Telefone = txtTelefone.Text;
+                            cliente.Endereco = txtEndereco.Text;
+                            cliente.Numero = Convert.ToInt32(txtNumero.Text);
+                            cliente.Complemento = txtComplemento.Text;
+                            cliente.Bairro = txtBairro.Text;
+                            cliente.CEP = txtCEP.Text;
+                            cliente.Estado = txtEstado.Text;
+                            cliente.Cidade = txtCidade.Text;
+
+                            dao.INSERT(cliente);
+                            MessageBox.Show("Cliente cadastrado com sucesso !");
+                            log.Show();
+                            this.Hide();
+                        }                        
                     }
                     else
                     {
-                        MessageBox.Show("Por favor, certifique-se que suas senhas coincidem.");
-                        txtSenha.Clear();
-                        txtConfirmarSenha.Clear();
-                        txtSenha.Focus();
+                        MessageBox.Show(validacao);
                     }
                 }
                 catch (Exception ex)
@@ -161,36 +164,6 @@ namespace tela_principal
             private void Form1_Load(object sender, EventArgs e)
             {
 
-            }
-
-            public bool ValidarCampos()
-            {
-                if (txtNome.Text == "")
-                    return false;
-                if (txtSobrenome.Text == "")
-                    return false;
-                if (txtEmail.Text == "")
-                    return false;
-                if (txtSenha.Text == "")
-                    return false;
-                if (txtCPF.Text == "")
-                    return false;
-                if (txtDataNascimento.Text == "")
-                    return false;
-                if (txtEndereco.Text == "")
-                    return false;
-                if (txtNumero.Text == "")
-                    return false;
-                if (txtBairro.Text == "")
-                    return false;
-                if (txtCEP.Text == "")
-                    return false;
-                if (txtEstado.Text == "")
-                    return false;
-                if (txtCidade.Text == "")
-                    return false;
-                else
-                    return true;
             }
     }
 }

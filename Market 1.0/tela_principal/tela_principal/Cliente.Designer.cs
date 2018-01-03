@@ -147,7 +147,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(514, 405);
             this.dataGridView1.TabIndex = 8;
-            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // tabPage2
             // 
@@ -571,7 +571,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(466, 507);
+            this.button1.Location = new System.Drawing.Point(466, 517);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 9;
@@ -583,7 +583,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(553, 538);
+            this.ClientSize = new System.Drawing.Size(553, 545);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tabControl1);
             this.Name = "formAlterarCliente";

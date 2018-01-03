@@ -109,68 +109,49 @@ namespace tela_principal
             dataGridView1.ReadOnly = true;
         }
 
-        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtCodigo.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            txtNome.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            txtSobrenome.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            txtEmail.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            txtSenha.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            txtConfirmarSenha.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            txtCPF.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            txtDataNascimento.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-            txtTelefone.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-            txtEndereco.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-            txtNumero.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-            txtComplemento.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
-            txtBairro.Text = dataGridView1.CurrentRow.Cells[11].Value.ToString();
-            txtCEP.Text = dataGridView1.CurrentRow.Cells[12].Value.ToString();
-            txtEstado.Text = dataGridView1.CurrentRow.Cells[13].Value.ToString();
-            txtCidade.Text = dataGridView1.CurrentRow.Cells[14].Value.ToString();
-            tabControl1.SelectedIndex = 1;
-            txtNome.Focus();
-        }
-
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             Validacao val = new Validacao();
             Clientes1 cliente = new Clientes1();
             DAO dao = new DAO();
+
+            string validacao = (val.ValidarCamposPessoais(txtNome.Text, txtSobrenome.Text, txtEmail.Text, txtCPF.Text, txtDataNascimento.Text, txtSenha.Text, txtConfirmarSenha.Text));
+
             try
             {
-                if (val.ValidarSenha(txtSenha.Text, txtConfirmarSenha.Text))
+                if (validacao == "")
                 {
-                    cliente.Id = Convert.ToInt16(txtCodigo.Text);
-                    cliente.Nome = txtNome.Text;
-                    cliente.Sobrenome = txtSobrenome.Text;
-                    cliente.Email = txtEmail.Text;
-                    cliente.Senha = txtSenha.Text;
-                    cliente.CPF = txtCPF.Text;
-                    cliente.DataNascimento = txtDataNascimento.Text;
-                    cliente.Telefone = txtTelefone.Text;
-                    cliente.Endereco = txtEndereco.Text;
-                    cliente.Numero = Convert.ToInt32(txtNumero.Text);
-                    cliente.Complemento = txtComplemento.Text;
-                    cliente.Bairro = txtBairro.Text;
-                    cliente.CEP = txtCEP.Text;
-                    cliente.Estado = txtEstado.Text;
-                    cliente.Cidade = txtCidade.Text;
+                    if ((val.ValidarCamposEndereco(txtEndereco.Text, txtNumero.Text, txtBairro.Text, txtCEP.Text, txtEstado.Text, txtCidade.Text)) == "")
+                    {
+                        cliente.Id = Convert.ToInt16(txtCodigo.Text);
+                        cliente.Nome = txtNome.Text;
+                        cliente.Sobrenome = txtSobrenome.Text;
+                        cliente.Email = txtEmail.Text;
+                        cliente.Senha = txtSenha.Text;
+                        cliente.CPF = txtCPF.Text;
+                        cliente.DataNascimento = txtDataNascimento.Text;
+                        cliente.Telefone = txtTelefone.Text;
+                        cliente.Endereco = txtEndereco.Text;
+                        cliente.Numero = Convert.ToInt32(txtNumero.Text);
+                        cliente.Complemento = txtComplemento.Text;
+                        cliente.Bairro = txtBairro.Text;
+                        cliente.CEP = txtCEP.Text;
+                        cliente.Estado = txtEstado.Text;
+                        cliente.Cidade = txtCidade.Text;
 
 
-                    dao.UPDATE(cliente);
+                        dao.UPDATE(cliente);
 
-                    MessageBox.Show("Cliente alterado com sucesso !");
+                        MessageBox.Show("Cliente alterado com sucesso !");
 
-                    Limpar();
-                    tabControl1.SelectedIndex = 0;
-                    btnPesquisar.PerformClick();
+                        Limpar();
+                        tabControl1.SelectedIndex = 0;
+                        btnPesquisar.PerformClick();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Por favor, certifique-se que suas senhas coincidem.");
-                    txtSenha.Clear();
-                    txtConfirmarSenha.Clear();
-                    txtSenha.Focus();
+                    MessageBox.Show(validacao);
                 }
             }
             catch (Exception ex)
@@ -330,6 +311,28 @@ namespace tela_principal
             Home hom = new Home();
             hom.Show();
             this.Hide();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtCodigo.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            txtNome.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            txtSobrenome.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            txtEmail.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            txtSenha.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            txtConfirmarSenha.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            txtCPF.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            txtDataNascimento.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            txtTelefone.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+            txtEndereco.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+            txtNumero.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+            txtComplemento.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+            txtBairro.Text = dataGridView1.CurrentRow.Cells[11].Value.ToString();
+            txtCEP.Text = dataGridView1.CurrentRow.Cells[12].Value.ToString();
+            txtEstado.Text = dataGridView1.CurrentRow.Cells[13].Value.ToString();
+            txtCidade.Text = dataGridView1.CurrentRow.Cells[14].Value.ToString();
+            tabControl1.SelectedIndex = 1;
+            txtNome.Focus();
         }
     }
 }

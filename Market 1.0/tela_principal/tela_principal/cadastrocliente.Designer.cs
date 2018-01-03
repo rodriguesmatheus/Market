@@ -264,7 +264,6 @@
             this.gbDadosPessoais.TabIndex = 2;
             this.gbDadosPessoais.TabStop = false;
             this.gbDadosPessoais.Text = "Dados Pessoais";
-            //this.gbDadosPessoais.Enter += new System.EventHandler(this.gbDadosPessoais_Enter);
             // 
             // txtDataNascimento
             // 
@@ -406,17 +405,17 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(88, 442);
+            this.btnCancelar.Location = new System.Drawing.Point(376, 437);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 17;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "Voltar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(357, 442);
+            this.btnSalvar.Location = new System.Drawing.Point(249, 437);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 19;
@@ -467,7 +466,7 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(222, 442);
+            this.btnLimpar.Location = new System.Drawing.Point(114, 437);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpar.TabIndex = 18;
